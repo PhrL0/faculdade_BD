@@ -1,0 +1,46 @@
+SELECT c.nome, v.produto FROM cliente as c INNER JOIN venda as v ON c.id_cliente = v.CLIENTE_id_cliente;
+/////////
+/////////
+SELECT c.nome, v.produto FROM cliente as c INNER JOIN venda as v ON c.id_cliente = v.CLIENTE_id_cliente WHERE v.data_compra = '2024-03-05';
+/////////
+/////////
+SELECT c.nome, v.produto FROM cliente as c INNER JOIN venda as v 
+ON c.id_cliente = v.CLIENTE_id_cliente WHERE v.data_compra = '2024-03-05' ORDER BY c.nome asc;
+/////////
+////////
+SELECT c.nome, v.produto FROM cliente as c INNER JOIN venda as v 
+ON c.id_cliente = v.CLIENTE_id_cliente WHERE c.nome = 'Ana Moser' 
+////////
+////////
+SELECT c.nome, v.produto FROM cliente as c INNER JOIN venda as v 
+ON c.id_cliente = v.CLIENTE_id_cliente WHERE c.nome = 'Ana Moser' 
+////////
+////////
+SELECT c.nome, v.produto FROM cliente as c INNER JOIN venda as v 
+ON c.id_cliente = v.CLIENTE_id_cliente WHERE c.nome = 'Ana Moser' AND v.data_compra BETWEEN '2024-04-01' AND '2024-04-30';
+////////
+////////
+SELECT c.nome, v.produto, v.data_compra , v.produto FROM cliente as c INNER JOIN venda as v 
+ON c.id_cliente = v.CLIENTE_id_cliente WHERE c.nome = 'Ana Moser' AND v.produto= 'Coca-cola';
+/////////
+/////////
+SELECT COUNT(c.nome) AS 'Total de Compras em Abril'
+FROM cliente as c INNER JOIN venda as v ON c.id_cliente = v.CLIENTE_id_cliente 
+WHERE c.nome = 'Ana Moser' AND v.data_compra BETWEEN '2024-04-01' AND '2024-04-30';
+//////////
+/////////
+SELECT SUM(v.valor) AS 'Valor gasto em Abril'
+FROM cliente as c INNER JOIN venda as v ON c.id_cliente = v.CLIENTE_id_cliente 
+WHERE c.nome = 'Ana Moser' AND v.data_compra BETWEEN '2024-04-01' AND '2024-04-30';
+////////////
+////////////
+SELECT c.nome, COUNT(c.nome) AS 'Compras Abril:', SUM(v.valor) AS 'Valor gasto em Abril:'
+FROM cliente as c INNER JOIN venda as v ON c.id_cliente = v.CLIENTE_id_cliente 
+WHERE c.nome = 'Ana Moser' AND v.data_compra BETWEEN '2024-04-01' AND '2024-04-30';
+///////////
+///////////
+SELECT COUNT(v.produto) AS 'Quantidade de Coca-Cola vendidas em Abril'
+FROM cliente as c INNER JOIN venda as v ON c.id_cliente = v.CLIENTE_id_cliente 
+WHERE v.produto='Coca-cola' AND v.data_compra BETWEEN '2024-04-01' AND '2024-04-30';
+///////////
+//////////
